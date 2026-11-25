@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Invitación a los 15 años de Luci — sábado 16 de enero.">
+<title>Los 15 de Luci</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap">
+<style>
+body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: una sola noche continua — fondos de bolas disco que se funden entre sí, contenido centrado, cromo flotando en los bordes */
+:root {
+  --noche: #050506;
+  --humo: #0d0d10;
+  --plata: #d9dbe0;
+  --plata-suave: #a4a7ae;
+  --perla: #f6f5f2;
+  --tinta: #121214;
+  --cromo: linear-gradient(135deg, #ffffff 0%, #8d9096 22%, #f4f5f7 45%, #6c6f75 68%, #e7e8eb 100%);
+  --f-script: "Pinyon Script", "Brush Script MT", cursive;
+  --f-serif: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --f-label: "Jost", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--noche); scroll-behavior: smooth; scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
+body { background: var(--noche); color: var(--plata); font-family: var(--f-serif); font-size: 18px; line-height: 1.5; overflow-x: clip; }
+a { color: inherit; }
+main { position: relative; z-index: 0; overflow-x: clip; }
+
+/* ---------- Fondos fundidos ---------- */
+.band { position: relative; }
+.band > .bg {
+  position: absolute; inset: -14vh 0; z-index: -2;
+  background-size: cover; background-position: center;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 78%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 78%, transparent 100%);
+  pointer-events: none;
+}
+.band > .bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(5,5,6,.55) 0%, rgba(5,5,6,.78) 70%); }
+/* Fondo fijo del bloque principal: ocupa toda la pantalla, centrado, y no se desplaza */
+.band > .bg.fixed-bg { inset: -6vh 0; clip-path: inset(0); background: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%); }
+.fixed-bg .bg-img { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100lvh; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.inner { position: relative; z-index: 2; max-width: 880px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); text-align: center; }
+
+.eyebrow { font-family: var(--f-label); font-size: 11px; letter-spacing: .42em; text-transform: uppercase; color: var(--plata-suave); }
+.script { font-family: var(--f-script); font-weight: 400; }
+.silver-text { background: linear-gradient(135deg, #ffffff 0%, #c4c7cd 28%, #ffffff 50%, #b3b6bd 74%, #f3f4f6 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: sheen 7s ease-in-out infinite; }
+@keyframes sheen { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+/* ---------- 1. Intro ---------- */
+.intro .inner { padding-block: clamp(110px, 22vh, 200px) clamp(90px, 16vh, 150px); }
+.intro p.lead { margin: 22px auto 0; max-width: 18ch; font-weight: 300; font-size: clamp(34px, 7.2vw, 64px); line-height: 1.12; color: #f1f1f3; text-wrap: balance; }
+.intro .lead .script { font-size: 1.18em; line-height: .9; }
+.w { display: inline-block; animation: wordIn .7s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i) * 85ms + 250ms); }
+@keyframes wordIn { from { opacity: 0; transform: translateY(14px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+.scroll-hint { margin-top: 56px; display: inline-flex; flex-direction: column; align-items: center; gap: 12px; font-family: var(--f-label); font-size: 10px; letter-spacing: .38em; text-transform: uppercase; color: var(--plata-suave); text-decoration: none; }
+.scroll-hint i { width: 1px; height: 46px; background: linear-gradient(var(--plata), transparent); animation: drip 2.4s ease-in-out infinite; transform-origin: top; }
+@keyframes drip { 0% { transform: scaleY(0); opacity: 0; } 40% { opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* ---------- 2. Principal ---------- */
+.hero .inner { padding-block: clamp(80px, 14vh, 130px); }
+.mis { margin: 0; display: flex; justify-content: center; align-items: center; gap: clamp(8px, 2vw, 18px); color: #eeeef0; line-height: 1; }
+.mis .script { font-size: clamp(40px, 9vw, 72px); transform: translateY(-.12em); }
+.mis .big15 { font-family: var(--f-serif); font-weight: 300; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; font-size: clamp(92px, 25vw, 176px); letter-spacing: -.02em; line-height: .82;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.6)); }
+.mis .anos { font-family: var(--f-label); font-weight: 300; font-size: clamp(14px, 3.4vw, 22px); letter-spacing: .42em; text-transform: uppercase; transform: translateY(.35em); }
+.name-stage { position: relative; margin: 6px auto 0; width: min(100%, 720px); padding-block: clamp(26px, 5vw, 44px); touch-action: pan-y; }
+.glow { position: absolute; left: 0; top: 0; width: clamp(180px, 34vw, 340px); aspect-ratio: 1; border-radius: 50%; pointer-events: none; z-index: 0;
+  background: radial-gradient(circle, rgba(255,255,255,.13) 0%, rgba(220,224,232,.05) 40%, transparent 68%);
+  filter: blur(10px); transform: translate(-50%, -50%); will-change: transform; }
+.glow span { position: absolute; inset: 0; border-radius: 50%; background: inherit; animation: breathe 6s ease-in-out infinite; }
+@keyframes breathe { 0%,100% { opacity: .5; transform: scale(.94); } 50% { opacity: .9; transform: scale(1.04); } }
+/* Elementos metálicos alrededor del nombre */
+.orn { position: absolute; z-index: 2; height: auto; max-width: none; pointer-events: none; filter: drop-shadow(0 4px 10px rgba(0,0,0,.55)); animation: float var(--dur, 8s) ease-in-out infinite; animation-delay: var(--delay, 0s); }
+.orn.o1 { width: clamp(34px, 7vw, 62px); left: 2%; top: 0; --r0: -8deg; --r1: 6deg; --dy: -10px; --dx: 4px; }
+.orn.o2 { width: clamp(40px, 8.5vw, 78px); right: 1%; top: -4%; --r0: 0deg; --r1: 18deg; --dy: 8px; --dx: -5px; --dur: 10s; }
+.orn.o3 { width: clamp(34px, 7vw, 60px); left: 2%; bottom: -4%; --r0: 10deg; --r1: -8deg; --dy: -8px; --delay: -3s; }
+.orn.o4 { width: clamp(28px, 5.5vw, 50px); right: 7%; bottom: -2%; --r0: -6deg; --r1: 10deg; --dy: -12px; --delay: -5s; --dur: 9s; }
+.orn.o5 { width: clamp(20px, 3.6vw, 34px); left: 24%; top: 2%; --r0: 0deg; --r1: 12deg; --dy: -6px; --delay: -2s; }
+.luci { position: relative; z-index: 1; margin: 0; display: flex; justify-content: center; align-items: flex-end; gap: clamp(0px, .6vw, 6px); }
+.luci img { height: clamp(104px, 28vw, 220px); width: auto; max-width: none; filter: drop-shadow(0 0 14px rgba(255,255,255,.28)) drop-shadow(0 10px 18px rgba(0,0,0,.6)) contrast(1.06); animation: bob 6s ease-in-out infinite; animation-delay: calc(var(--i) * -1.4s); }
+.luci img.letter-i { height: clamp(92px, 24.5vw, 192px); }
+@keyframes bob { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-7px) rotate(-1.2deg); } }
+.countdown-label { margin-top: 34px; }
+.countdown { margin: 14px auto 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(8px, 2vw, 14px); max-width: 460px; }
+.unit { padding: 14px 4px 10px; border: 1px solid rgba(217,219,224,.28); border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.015)); backdrop-filter: blur(6px); }
+.unit b { display: block; font-weight: 400; font-size: clamp(28px, 7vw, 44px); line-height: 1; color: #fafafa; font-variant-numeric: tabular-nums lining-nums; font-feature-settings: "lnum" 1, "tnum" 1; }
+.unit small { display: block; margin-top: 6px; font-family: var(--f-label); font-size: 9.5px; letter-spacing: .3em; text-transform: uppercase; color: var(--plata-suave); }
+.countdown-done { margin-top: 14px; font-size: 26px; }
+
+/* ---------- 3. Detalles ---------- */
+.detalles .inner { padding-block: clamp(90px, 14vh, 140px) 36px; }
+.detalles h2 { margin: 0; font-weight: 300; font-size: clamp(50px, 11vw, 92px); line-height: 1; color: #f3f3f5; }
+.cards { position: relative; z-index: 2; display: grid; gap: 10px; }
+.card { position: relative; overflow: hidden; background: var(--perla); color: var(--tinta); text-align: center;
+  border-top: 1px solid #ffffff; border-bottom: 1px solid #c9cacd; box-shadow: 0 18px 40px -22px rgba(0,0,0,.9); }
+.card::before { content: ""; position: absolute; inset: 0; background: url("mosaico.webp") center/420px auto repeat; opacity: .11; mix-blend-mode: multiply; pointer-events: none; }
+.card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.75) 48%, transparent 66%); transform: translateX(-100%); animation: cardSheen 9s ease-in-out infinite; pointer-events: none; }
+.card:nth-child(2)::after { animation-delay: 1.2s; } .card:nth-child(3)::after { animation-delay: 2.4s; }
+@keyframes cardSheen { 0%, 70% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+.card .inner { padding-block: clamp(40px, 7vh, 60px); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.card .ico { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--cromo); box-shadow: inset 0 1px 0 #fff, 0 6px 14px -6px rgba(0,0,0,.45); }
+.card .ico svg { width: 24px; height: 24px; stroke: var(--tinta); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.card .eyebrow { color: #6d6f74; margin-top: 6px; }
+.card .value { margin: 0; font-weight: 400; font-size: clamp(30px, 6.4vw, 46px); line-height: 1.1; text-wrap: balance; }
+.card .value .script { font-size: 1.25em; }
+.card .note { margin: 0; font-family: var(--f-label); font-size: 14px; color: #55575c; letter-spacing: .04em; }
+.elegante { font-family: var(--f-script); font-size: 1.3em; background: linear-gradient(120deg, #2a2b2e, #9a9da3 40%, #2a2b2e 60%, #7c7f85); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .08em; }
+
+/* Botones redondeados con aro cromado */
+.btn { position: relative; display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; padding: 13px 26px 13px 14px; border-radius: 999px; text-decoration: none;
+  font-family: var(--f-label); font-size: 12px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase;
+  color: #f4f4f5; border: 2px solid transparent;
+  background: linear-gradient(180deg, #232327, #0b0b0d) padding-box, var(--cromo) border-box;
+  box-shadow: 0 10px 22px -12px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.12);
+  transition: transform .25s ease, box-shadow .25s ease; }
+.btn .dot { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--cromo); box-shadow: inset 0 1px 0 #fff; flex: none; }
+.btn .dot svg { width: 15px; height: 15px; stroke: #111; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 16px 28px -14px rgba(0,0,0,.9), 0 0 0 4px rgba(200,203,210,.18); }
+.btn:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+/* ---------- 4. Confirmar ---------- */
+.confirmar .inner { padding-block: clamp(110px, 16vh, 160px) clamp(90px, 14vh, 130px); }
+.importante { font-family: var(--f-label); font-weight: 300; font-size: clamp(20px, 4.4vw, 30px); letter-spacing: .5em; text-indent: .5em; text-transform: uppercase; color: #f0f0f2; }
+.confirmar h2 { margin: 6px 0 0; font-size: clamp(36px, 9.4vw, 80px); text-wrap: balance; line-height: 1.1; font-weight: 400; }
+.btn-wa { margin-top: 30px; padding: 16px 34px 16px 16px; font-size: 13px; color: #111; overflow: hidden;
+  background: linear-gradient(135deg, #fdfdfd, #b9bcc2 30%, #f2f3f5 52%, #9b9ea5 78%, #e6e7ea) padding-box, linear-gradient(135deg, #6b6e74, #fff, #55585e) border-box; }
+.btn-wa .dot { width: 36px; height: 36px; background: #0d0d0f; }
+.btn-wa .dot svg { width: 19px; height: 19px; fill: #f2f2f2; stroke: none; }
+.btn-wa::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 35%, rgba(255,255,255,.9) 50%, transparent 65%); transform: translateX(-120%); animation: cardSheen 4.5s ease-in-out infinite; pointer-events: none; }
+
+/* ---------- 5. Cierre ---------- */
+.cierre .inner { padding-block: clamp(110px, 16vh, 170px) clamp(120px, 18vh, 180px); }
+.cierre h2 { margin: 0; font-size: clamp(64px, 15vw, 128px); line-height: 1.05; font-weight: 400; }
+.cierre p { margin: 18px auto 0; max-width: 22ch; font-size: clamp(22px, 4.6vw, 32px); font-weight: 300; line-height: 1.3; color: #ececef; text-wrap: balance; }
+.firma { margin-top: 54px; }
+
+/* ---------- Elementos flotantes ---------- */
+.decor { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+.decor.front { z-index: 3; }
+.fl { position: absolute; will-change: transform; }
+.fl img { display: block; width: 100%; height: auto; max-width: none; animation: float var(--dur, 9s) ease-in-out infinite; animation-delay: var(--delay, 0s); }
+@keyframes float { 0%,100% { transform: translate(0,0) rotate(var(--r0, -4deg)); } 50% { transform: translate(var(--dx, 10px), var(--dy, -22px)) rotate(var(--r1, 6deg)); } }
+
+/* Revelado suave al hacer scroll (sólo si hay JS) */
+.js .reveal.pending { opacity: 0; transform: translateY(26px); }
+.reveal { transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal.pending { opacity: 1; transform: none; }
+}
+</style>
+
+</head>
+<body>
+<main id="top">
+  <div class="decor" id="decorBack" aria-hidden="true"></div>
+
+  <!-- 1. Intro -->
+  <section class="band intro">
+    <div class="bg" style="background-image:url('fondo-colgantes.webp')"></div>
+    <div class="inner">
+      <div class="eyebrow">Una noche para recordar</div>
+      <p class="lead">
+        <span class="w" style="--i:0">Sos</span> <span class="w" style="--i:1">muy</span> <span class="w" style="--i:2">importante</span> <span class="w" style="--i:3">en</span> <span class="w" style="--i:4">mi</span> <span class="w" style="--i:5">vida,</span>
+        <span class="w script silver-text" style="--i:6">por eso quiero</span> <span class="w script silver-text" style="--i:7">invitarte</span>
+        <span class="w" style="--i:8">a</span> <span class="w" style="--i:9">mi</span> <span class="w" style="--i:10">gran</span> <span class="w" style="--i:11">noche</span>
+      </p>
+      <a class="scroll-hint" href="#principal"><i></i>Deslizá</a>
+    </div>
+  </section>
+
+  <!-- 2. Principal -->
+  <section class="band hero" id="principal">
+    <div class="bg fixed-bg"><div class="bg-img" style="background-image:url('fondo-bolas.webp')"></div></div>
+    <div class="inner">
+      <p class="mis reveal" aria-label="Mis 15 años"><span class="script silver-text">Mis</span><span class="big15 silver-text">15</span><span class="anos">años</span></p>
+      <div class="name-stage" id="nameStage">
+        <div class="glow" id="glow"><span></span></div>
+        <img class="chroma orn o2" src="bola.webp" alt="">
+        <img class="chroma orn o3" src="estrella.webp" alt="">
+        <h1 class="luci" aria-label="Luci">
+          <img class="chroma" src="letra-l.webp" alt="" style="--i:0">
+          <img class="chroma" src="letra-u.webp" alt="" style="--i:1">
+          <img class="chroma" src="letra-c.webp" alt="" style="--i:2">
+          <img class="chroma letter-i" src="letra-i.webp" alt="" style="--i:3">
+        </h1>
+      </div>
+      <div class="eyebrow countdown-label reveal">La gran noche comienza en</div>
+      <div class="countdown reveal" id="countdown" role="timer" aria-live="off">
+        <div class="unit"><b id="cd-d">00</b><small>Días</small></div>
+        <div class="unit"><b id="cd-h">00</b><small>Horas</small></div>
+        <div class="unit"><b id="cd-m">00</b><small>Minutos</small></div>
+        <div class="unit"><b id="cd-s">00</b><small>Segundos</small></div>
+      </div>
+      <p class="countdown-done script silver-text" id="cdDone" hidden>¡Llegó la gran noche!</p>
+    </div>
+  </section>
+
+  <!-- 3. Detalles -->
+  <section class="band detalles">
+    <div class="bg" style="background-image:url('fondo-bola.webp')"></div>
+    <div class="inner">
+      <h2 class="script silver-text reveal">Detalles</h2>
+    </div>
+  </section>
+  <div class="cards">
+    <article class="card reveal">
+      <div class="inner">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle cx="12" cy="15" r="1.3"/></svg></span>
+        <div class="eyebrow">Fecha</div>
+        <p class="value">Sábado <span class="script">16</span> de enero</p>
+        <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Mis+15+a%C3%B1os+-+Luci&amp;dates=20270116/20270117&amp;location=Sal%C3%B3n+de+fiestas+La+Nona&amp;details=%C2%A1Te+espero+en+mi+gran+noche!">
+          <span class="dot"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>Agendar fecha
+        </a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="inner">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg></span>
+        <div class="eyebrow">Lugar</div>
+        <p class="value">Salón de fiestas <span class="script">“La Nona”</span></p>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sal%C3%B3n+de+fiestas+La+Nona">
+          <span class="dot"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>Ver ubicación
+        </a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="inner">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 7.5a1.8 1.8 0 1 1 1.8-1.8c0 1-1.8 1.3-1.8 2.6v.7"/><path d="M12 9l8.6 6.4a1.3 1.3 0 0 1-.8 2.3H4.2a1.3 1.3 0 0 1-.8-2.3z"/></svg></span>
+        <div class="eyebrow">Dresscode</div>
+        <p class="value"><span class="elegante">Elegante</span>-Sport</p>
+        <p class="note">Brillá con tu mejor look</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- 4. Confirmar -->
+  <section class="band confirmar">
+    <div class="bg" style="background-image:url('fondo-fuegos.webp')"></div>
+    <div class="inner">
+      <div class="importante reveal">Importante</div>
+      <h2 class="script silver-text reveal">Confirmar asistencia</h2>
+      <a class="btn btn-wa reveal" href="https://wa.link/ak8cyw" target="_blank" rel="noopener">
+        <span class="dot"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3.3 29l7.2-1.9c1.8 1 3.9 1.5 5.9 1.5h.1c7 0 12.6-5.6 12.6-12.6S23 3 16 3zm0 23.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.1-4.2-.2-.4c-1-1.7-1.6-3.6-1.6-5.6C5.4 9.8 10.1 5.1 16 5.1s10.6 4.7 10.6 10.6S21.9 26.1 16 26.1zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.3-.5-2.6-1.6-.9-.8-1.6-1.9-1.7-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></span>
+        Confirmar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. Cierre -->
+  <section class="band cierre">
+    <div class="bg" style="background-image:url('fondo-bola.webp');transform:scaleX(-1)"></div>
+    <div class="inner">
+      <h2 class="script silver-text reveal">¡Te espero!</h2>
+      <p class="reveal">Tu asistencia es muy especial en esta gran noche</p>
+      <div class="eyebrow firma">Luci · 16.01</div>
+    </div>
+  </section>
+
+  <div class="decor front" id="decorFront" aria-hidden="true"></div>
+</main>
+
+<script>
+document.documentElement.classList.add('js');
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---- Quitar el fondo blanco de las imágenes cromadas (en el navegador) ---- */
+var cache = {};
+function clean(src) {
+  if (cache[src]) return cache[src];
+  cache[src] = new Promise(function (resolve) {
+    var im = new Image();
+    im.onload = function () {
+      try {
+        var max = 720, k = Math.min(1, max / Math.max(im.naturalWidth, im.naturalHeight));
+        var w = Math.round(im.naturalWidth * k), h = Math.round(im.naturalHeight * k);
+        var c = document.createElement('canvas'); c.width = w; c.height = h;
+        var x = c.getContext('2d', { willReadFrequently: true }); x.drawImage(im, 0, 0, w, h);
+        var d = x.getImageData(0, 0, w, h), p = d.data, n = w * h;
+        var seen = new Uint8Array(n), q = new Int32Array(n), qh = 0, qt = 0;
+        function bg(i) { var o = i * 4, r = p[o], g = p[o + 1], b = p[o + 2], a = p[o + 3];
+          if (a < 16) return true; var mn = Math.min(r, g, b), mx = Math.max(r, g, b); return mn > 228 && mx - mn < 22; }
+        function push(i) { if (!seen[i] && bg(i)) { seen[i] = 1; q[qt++] = i; } }
+        for (var xx = 0; xx < w; xx++) { push(xx); push((h - 1) * w + xx); }
+        for (var yy = 0; yy < h; yy++) { push(yy * w); push(yy * w + w - 1); }
+        while (qh < qt) { var i = q[qh++], cx = i % w, cy = (i / w) | 0;
+          if (cx > 0) push(i - 1); if (cx < w - 1) push(i + 1); if (cy > 0) push(i - w); if (cy < h - 1) push(i + w); }
+        var minX = w, minY = h, maxX = 0, maxY = 0;
+        for (var j = 0; j < n; j++) {
+          var o = j * 4;
+          if (seen[j]) { p[o + 3] = 0; continue; }
+          var cx2 = j % w, cy2 = (j / w) | 0, edge = (cx2 > 0 && seen[j - 1]) || (cx2 < w - 1 && seen[j + 1]) || (cy2 > 0 && seen[j - w]) || (cy2 < h - 1 && seen[j + w]);
+          if (edge) { var m = Math.min(p[o], p[o + 1], p[o + 2]); if (m > 190) p[o + 3] = Math.min(p[o + 3], Math.max(0, Math.round((255 - m) / 65 * 255))); }
+          if (p[o + 3] > 20) { if (cx2 < minX) minX = cx2; if (cx2 > maxX) maxX = cx2; if (cy2 < minY) minY = cy2; if (cy2 > maxY) maxY = cy2; }
+        }
+        x.putImageData(d, 0, 0);
+        if (maxX <= minX || maxY <= minY) { resolve(src); return; }
+        var t = document.createElement('canvas'), pad = 4; t.width = maxX - minX + 1 + pad * 2; t.height = maxY - minY + 1 + pad * 2;
+        t.getContext('2d').drawImage(c, minX - pad, minY - pad, t.width, t.height, 0, 0, t.width, t.height);
+        t.toBlob(function (b) { resolve(b ? URL.createObjectURL(b) : src); }, 'image/png');
+      } catch (e) { resolve(src); }
+    };
+    im.onerror = function () { resolve(src); };
+    im.src = src;
+  });
+  return cache[src];
+}
+document.querySelectorAll('img.chroma').forEach(function (img) {
+  var orig = img.getAttribute('src'); img.style.visibility = 'hidden';
+  clean(orig).then(function (u) { img.src = u; img.style.visibility = ''; });
+});
+
+/* ---- Elementos flotantes alrededor de toda la web ---- */
+var E = { bola: 'bola.webp', estrella: 'estrella.webp', chispas: 'chispas.webp' };
+// t: % de la altura de la página · s: lado · w: ancho (vw, con mínimo/máximo en px) · b: desenfoque · o: opacidad · z: profundidad parallax
+var items = [
+  { e: 'bola',     t: 1,  s: 'r', off: -14, w: 34, min: 150, max: 380, b: 5, o: .75, z: .35, layer: 'back' },
+  { e: 'chispas',  t: 5,  s: 'l', off: 3,   w: 9,  min: 46,  max: 110, b: 0, o: .95, z: -.1, layer: 'front' },
+  { e: 'estrella', t: 13, s: 'l', off: -10, w: 26, min: 120, max: 300, b: 4, o: .6,  z: .45, layer: 'back' },
+  { e: 'chispas',  t: 21, s: 'r', off: 4,   w: 8,  min: 40,  max: 96,  b: 0, o: .9,  z: -.15, layer: 'front' },
+  { e: 'bola',     t: 24, s: 'l', off: -16, w: 30, min: 140, max: 340, b: 6, o: .55, z: .5,  layer: 'back' },
+  { e: 'estrella', t: 34, s: 'r', off: 2,   w: 9,  min: 44,  max: 110, b: 0, o: .95, z: -.1, layer: 'front' },
+  { e: 'chispas',  t: 35, s: 'r', off: -8,  w: 24, min: 110, max: 260, b: 3, o: .55, z: .4,  layer: 'back' },
+  { e: 'estrella', t: 44, s: 'l', off: -12, w: 28, min: 120, max: 320, b: 5, o: .5,  z: .45, layer: 'back' },
+  { e: 'bola',     t: 56, s: 'r', off: -15, w: 32, min: 150, max: 360, b: 6, o: .5,  z: .5,  layer: 'back' },
+  { e: 'chispas',  t: 63, s: 'l', off: 3,   w: 8,  min: 40,  max: 96,  b: 0, o: .9,  z: -.12, layer: 'front' },
+  { e: 'estrella', t: 70, s: 'r', off: -9,  w: 24, min: 110, max: 280, b: 4, o: .55, z: .4,  layer: 'back' },
+  { e: 'bola',     t: 79, s: 'l', off: -14, w: 30, min: 140, max: 340, b: 5, o: .6,  z: .45, layer: 'back' },
+  { e: 'chispas',  t: 86, s: 'r', off: 4,   w: 9,  min: 44,  max: 110, b: 0, o: .95, z: -.1, layer: 'front' },
+  { e: 'estrella', t: 92, s: 'l', off: 3,   w: 8,  min: 40,  max: 100, b: 0, o: .9,  z: -.1, layer: 'front' },
+  { e: 'bola',     t: 95, s: 'r', off: -12, w: 26, min: 130, max: 300, b: 4, o: .6,  z: .35, layer: 'back' }
+];
+var nodes = [], narrow = window.innerWidth < 640;
+items.forEach(function (it, k) {
+  var wrap = document.createElement('div'); wrap.className = 'fl';
+  wrap.style.top = it.t + '%';
+  var off = it.layer === 'front' ? (narrow ? -3 : 1.5) : it.off;
+  wrap.style[it.s === 'l' ? 'left' : 'right'] = off + 'vw';
+  wrap.style.width = 'clamp(' + it.min + 'px,' + it.w + 'vw,' + it.max + 'px)';
+  wrap.style.opacity = it.o;
+  var img = document.createElement('img'); img.alt = '';
+  if (it.b) img.style.filter = 'blur(' + it.b + 'px)';
+  if (it.layer === 'back') img.style.animation = 'none'; // los grandes del fondo quedan quietos
+  img.style.setProperty('--dur', (8 + (k % 5) * 1.3) + 's');
+  img.style.setProperty('--delay', (-k * 1.7) + 's');
+  img.style.setProperty('--dx', ((k % 2 ? -1 : 1) * (6 + k % 4 * 3)) + 'px');
+  img.style.setProperty('--dy', (-(14 + k % 3 * 8)) + 'px');
+  img.style.setProperty('--r0', ((k % 2 ? 4 : -5)) + 'deg');
+  img.style.setProperty('--r1', ((k % 2 ? -7 : 8)) + 'deg');
+  clean(E[it.e]).then(function (u) { img.src = u; });
+  wrap.appendChild(img);
+  document.getElementById(it.layer === 'front' ? 'decorFront' : 'decorBack').appendChild(wrap);
+  nodes.push({ el: wrap, z: it.z });
+});
+
+/* ---- Resplandor interactivo detrás de LUCI ---- */
+(function () {
+  var stage = document.getElementById('nameStage'), glow = document.getElementById('glow');
+  var tx = 0, ty = 0, cx = 0, cy = 0, last = 0;
+  function center() { tx = stage.clientWidth / 2; ty = stage.clientHeight / 2; }
+  center(); cx = tx; cy = ty;
+  function move(e) { var r = stage.getBoundingClientRect(); var pt = e.touches ? e.touches[0] : e;
+    tx = Math.max(0, Math.min(r.width, pt.clientX - r.left)); ty = Math.max(-40, Math.min(r.height + 40, pt.clientY - r.top)); last = performance.now(); }
+  var hero = document.getElementById('principal');
+  hero.addEventListener('pointermove', move); hero.addEventListener('touchmove', move, { passive: true });
+  window.addEventListener('resize', center);
+  function loop(now) {
+    if (now - last > 2200) { var a = now / 2600; tx = stage.clientWidth / 2 + Math.cos(a) * stage.clientWidth * .18; ty = stage.clientHeight / 2 + Math.sin(a * 1.3) * 18; }
+    cx += (tx - cx) * .07; cy += (ty - cy) * .07;
+    glow.style.transform = 'translate(' + (cx).toFixed(1) + 'px,' + (cy).toFixed(1) + 'px) translate(-50%,-50%)';
+    requestAnimationFrame(loop);
+  }
+  if (reduce) { glow.style.transform = 'translate(' + tx + 'px,' + ty + 'px) translate(-50%,-50%)'; } else requestAnimationFrame(loop);
+})();
+
+/* ---- Cuenta regresiva: sábado 16 de enero de 2027 (hora Argentina) ---- */
+(function () {
+  var target = new Date('2027-01-16T00:00:00-03:00').getTime();
+  var ids = ['cd-d', 'cd-h', 'cd-m', 'cd-s'].map(function (i) { return document.getElementById(i); });
+  function pad(v) { return v < 10 ? '0' + v : '' + v; }
+  function tick() {
+    var ms = target - Date.now();
+    if (ms <= 0) { document.getElementById('countdown').hidden = true; document.getElementById('cdDone').hidden = false; return; }
+    var s = Math.floor(ms / 1000);
+    ids[0].textContent = pad(Math.floor(s / 86400)); ids[1].textContent = pad(Math.floor(s % 86400 / 3600));
+    ids[2].textContent = pad(Math.floor(s % 3600 / 60)); ids[3].textContent = pad(s % 60);
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ---- Revelado al hacer scroll ---- */
+if ('IntersectionObserver' in window && !reduce) {
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('pending'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    var r = el.getBoundingClientRect(); if (r.top > window.innerHeight) { el.classList.add('pending'); io.observe(el); }
+  });
+}
+</script>
+
+</body>
+</html>
