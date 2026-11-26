@@ -446,7 +446,7 @@ if ('IntersectionObserver' in window && !reduce) {
   function play() { a.volume = 0; var p = a.play(); if (p && p.then) p.then(function () { started = true; b.classList.add('playing'); b.setAttribute('aria-pressed', 'true'); b.setAttribute('aria-label', 'Pausar música'); hint.classList.add('gone'); fadeTo(.55); }).catch(function () {}); }
   function pause() { a.pause(); b.classList.remove('playing'); b.setAttribute('aria-pressed', 'false'); b.setAttribute('aria-label', 'Activar música'); }
   b.addEventListener('click', function (e) { e.stopPropagation(); if (a.paused) { userPaused = false; play(); } else { userPaused = true; pause(); } });
-  function first() { if (!started && !userPaused) play(); }
+  function first(e) { if (e && e.target && e.target.closest && e.target.closest('#musicBtn')) return; if (!started && !userPaused) play(); }
   ['pointerdown', 'touchend', 'keydown'].forEach(function (ev) { window.addEventListener(ev, first, { passive: true }); });
   window.addEventListener('scroll', first, { passive: true });
   setTimeout(function () { hint.classList.add('gone'); }, 9000);
