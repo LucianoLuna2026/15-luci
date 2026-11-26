@@ -51,7 +51,7 @@ main { position: relative; z-index: 0; overflow-x: clip; }
 
 .eyebrow { font-family: var(--f-label); font-size: 11px; letter-spacing: .42em; text-transform: uppercase; color: var(--plata-suave); }
 .script { font-family: var(--f-script); font-weight: 400; }
-.silver-text { background: linear-gradient(135deg, #ffffff 0%, #c4c7cd 28%, #ffffff 50%, #b3b6bd 74%, #f3f4f6 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: sheen 7s ease-in-out infinite; }
+.silver-text { color: #ffffff; }
 @keyframes sheen { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
 /* ---------- 1. Intro ---------- */
@@ -112,8 +112,10 @@ main { position: relative; z-index: 0; overflow-x: clip; }
 .card .value { margin: 0; font-weight: 400; font-size: clamp(30px, 6.4vw, 46px); line-height: 1.1; text-wrap: balance; }
 .card .value .script { font-size: 1.25em; }
 .card .note.hora { font-size: 13px; letter-spacing: .32em; color: #6d6f74; margin-top: -2px; }
+.card .note.prohibido { margin-top: 4px; font-size: 15px; color: var(--tinta); letter-spacing: .06em; }
+.card .note.prohibido strong { font-weight: 600; }
 .card .note { margin: 0; font-family: var(--f-label); font-size: 14px; color: #55575c; letter-spacing: .04em; }
-.elegante { font-family: var(--f-script); font-size: 1.3em; background: linear-gradient(120deg, #2a2b2e, #9a9da3 40%, #2a2b2e 60%, #7c7f85); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .08em; }
+.elegante { font-family: var(--f-script); font-size: 1.3em; color: var(--tinta); padding: 0 .08em; }
 
 /* Botones redondeados con aro cromado */
 .btn { position: relative; display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; padding: 13px 26px 13px 14px; border-radius: 999px; text-decoration: none;
@@ -241,6 +243,7 @@ main { position: relative; z-index: 0; overflow-x: clip; }
         <div class="eyebrow">Dresscode</div>
         <p class="value"><span class="elegante">Elegante</span>-Sport</p>
         <p class="note">Brillá con tu mejor look</p>
+        <p class="note prohibido"><strong>Prohibido el color plateado</strong></p>
       </div>
     </article>
   </div>
